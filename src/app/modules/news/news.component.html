@@ -1,0 +1,31 @@
+<div class="first-header">
+  <span>{{ sourceName }}</span>
+</div>
+
+<div class="second-header">
+
+  <mat-form-field>
+    <mat-label>Select source</mat-label>
+    <mat-select [(value)]="selected" (valueChange)="sourceSelected($event)">
+      <mat-option value="sourceAll">All sources</mat-option>
+      <mat-option *ngFor="let source of sources" [value]="source">{{ source }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-search></app-search>
+
+  <mat-button-toggle class="header-element" (click)="openAddNewsDialog()">Add article</mat-button-toggle>
+</div>
+
+<div class="news-list">
+  <div *ngIf="newsArray.length; else noNews">
+    <app-news-item
+      [news]="news"
+      *ngFor="let news of newsArray"
+    ></app-news-item>
+  </div>
+</div>
+
+<ng-template class="news-list" #noNews>
+  <div class="noNews">There are no news!</div>
+</ng-template>

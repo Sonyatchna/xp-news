@@ -1,0 +1,6 @@
+<form class="search-form">
+  <mat-form-field>
+    <input matInput placeholder="News" aria-label="News" #filterInput>
+  </mat-form-field>
+  <mat-button-toggle class="search-button" (click)="filter(filterInput.value)">Filter</mat-button-toggle>
+</form>

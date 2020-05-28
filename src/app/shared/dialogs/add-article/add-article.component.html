@@ -1,0 +1,38 @@
+<h3 mat-dialog-title>Create News</h3>
+
+<mat-dialog-content [formGroup]="addNewsForm" class="dialog-content">
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Heading" formControlName="heading">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Short description" formControlName="shortDescription">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Content" formControlName="content">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Date" formControlName="date">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Author" formControlName="author">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Source" formControlName="source">
+  </mat-form-field>
+
+  <mat-form-field class="mat-form-item">
+    <input matInput placeholder="Image URL" formControlName="imageUrl">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="button-wrapper">
+  <button mat-raised-button (click)="cancelAddingNews()" class="btn">Cancel</button>
+  <button mat-raised-button (click)="addNews()" class="btn" [disabled]="!addNewsForm.valid">Save</button>
+</mat-dialog-actions>

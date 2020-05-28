@@ -1,0 +1,33 @@
+<div class="news-item">
+  <div class="image-div">
+    <img class="news-image" src="{{news?.imageUrl}}">
+  </div>
+
+  <div class="info-div">
+    <div class="info-div-header">
+      <div class="info-div-heading">
+      <span>
+        {{news?.heading}}
+      </span>
+      </div>
+      <div class="info-div-date">
+      <span>
+        Date: {{news?.date}}
+      </span>
+      </div>
+    </div>
+
+    <div class="info-div-description">
+      <span>
+        {{news?.shortDescription}}
+      </span>
+    </div>
+
+    <div class="info-div-read-more">
+      <span [routerLink]="['/news/', news?.id]">
+        Read more...
+      </span>
+    </div>
+
+  </div>
+</div>
